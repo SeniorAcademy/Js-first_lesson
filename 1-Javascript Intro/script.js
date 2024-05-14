@@ -1,0 +1,7 @@
+console.log('Hello World')
+console.log(1234)
+console.log(true)
+console.log([1,2,3])
+console.error('Sehv Var')
+console.warn('Xeberdarliq')
+// console.clear()
