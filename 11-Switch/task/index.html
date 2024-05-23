@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Day Message</title>
+    <style>
+        body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #333;
+}
+
+#message-container {
+    margin: 20px 0;
+}
+
+#message {
+    font-size: 18px;
+    color: #333;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+select {
+    padding: 8px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Day Message</h1>
+        <div id="message-container">
+            <p id="message">Loading...</p>
+        </div>
+        <label for="daySelect">Select a day:</label>
+        <select id="daySelect">
+            <option value="Monday">Monday</option>
+            <option value="Tuesday">Tuesday</option>
+            <option value="Wednesday">Wednesday</option>
+            <option value="Thursday">Thursday</option>
+            <option value="Friday">Friday</option>
+            <option value="Saturday">Saturday</option>
+            <option value="Sunday">Sunday</option>
+        </select>
+        <button onclick="showMessage()">Show Message</button>
+    </div>
+
+    <script>
+        function showMessage() {
+    let daySelect = document.getElementById('daySelect');
+    let messageContainer = document.getElementById('message');
+
+    let dayOfWeek = daySelect.value;
+    let message;
+
+    switch (dayOfWeek) {
+        case "Saturday":
+            message = "It's the weekend!";
+            break;
+        case "Sunday":
+            message = "It's the weekend, but tomorrow is a workday.";
+            break;
+        default:
+            message = "It's a workday.";
+    }
+
+    messageContainer.textContent = message;
+}
+
+    </script>
+    <!-- <script src="script.js"></script> -->
+</body>
+</html>
