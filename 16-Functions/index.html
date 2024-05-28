@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        Functions
+    </h1>
+
+    <script>
+function checkNumberType(number) {
+    if (typeof number !== 'number') {
+        console.log('Hatalı giriş: Bir sayı bekleniyor.');
+        return null;
+    }
+
+    if (number > 0) {
+        console.log(`${number} pozitif bir sayıdır.`);
+    } else if (number < 0) {
+        console.log(`${number} negatif bir sayıdır.`);
+    } else {
+        console.log(`${number} sıfırdır.`);
+    }
+}
+
+// Fonksiyonu kullanarak örnekler
+checkNumberType(5); // Pozitif sayı
+checkNumberType(-3); // Negatif sayı
+checkNumberType(0); // Sıfır
+checkNumberType('abc'); // Hatalı giriş
+
+
+    </script>
+    <!-- <script  src="script.js" type="text/Javascript"></script> -->
+</body>
+</html>
