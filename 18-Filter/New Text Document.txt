@@ -1,0 +1,2 @@
+https://stackabuse.com/guide-to-javascripts-filter-method/
+https://code.tutsplus.com/5-real-life-uses-for-the-javascript-reduce-method--cms-39096a

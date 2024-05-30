@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+
+    <script>
+        // function sayHello() {
+        //     return 'Hello'
+        // }
+        // console.log(sayHello())
+
+
+        // const sayHello2 = () => 'Hello'
+        // console.log(sayHello2())
+
+
+
+
+        // function sayHello(name) {
+        //     return `Hello ${name}`
+        // }
+        // console.log(sayHello('Shukur'))
+
+
+        // const sayHello2 = (name) => `Hello ${name}`
+        // console.log(sayHello2('Kenan'))
+
+        // const sayHello3 = (name , surName) =>  `Hello ${name} ${surName}`
+        // console.log(sayHello3('Kenan' , 'Balayev'))
+
+        ////////////////////////////////////////////////////////////////////////////////////////////
+
+        // function sum(a, b) {
+        //     return a + b
+        // }
+        // console.log(sum(10, 20))
+
+        // const sum2 = ((a, b) => a + b)
+        // console.log(sum2(10, 20))
+
+
+        ////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+        //  const numbers = [1, 3 , 6 , 8]
+        // numbers.forEach((number , index)=>{
+        //     numbers[index] = number * 2
+        // })
+        // console.log(numbers)
+
+
+        // const copyNumbers = [];
+        // numbers.forEach((number , index) => {   // yeni bir Arrraye kopyalamaq
+        //     copyNumbers.push(number * 2)
+        // })
+        // console.log(copyNumbers)
+
+        // // // ozu hazir kopya array yaradir
+        //  const res = numbers.map(number => number * 2)
+        //  console.log(res)
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+        // const products = ['Apple', 'Samsung', 'Xiomi', 'Nokia']
+
+        // const list = [];
+        // products.forEach(product => {
+        //     list.push(findPr(product));
+        // });
+
+        // function findPr(product) {
+        //     return product.length;
+        // }
+        // console.log(list);
+
+
+        // const list2 = [];
+        // products.forEach(product => {
+        //     list2.push(product.length);
+        // });
+
+        // console.log(list2);
+
+
+        // const list3 = products.map(findPr)
+        // function findPr(product) {
+        //     return product.length
+        // }
+        // console.log(list3)
+
+        // const list4 = products.map(product => product.length)
+        // console.log(list4)
+
+        ////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+        // const phones = [
+        //     { model: 'Iphone10', price: 1000 },
+        //     { model: 'Iphone11', price: 2000 },
+        //     { model: 'Iphone12', price: 3000 },
+        //     { model: 'Iphone13', price: 4000 }
+        // ]
+
+
+        // let val = [];
+        // phones.forEach(phone => {
+        //     val.push(getPhone(phone));
+        // });
+
+        // function getPhone(phone) {
+        //     return phone.model;
+        // }
+        // console.log(val);
+
+
+        // let val2 = [];
+        // phones.forEach(phone => {
+        //     val2.push(phone.price);
+        // });
+        // console.log(val2);
+
+
+        // let val3 = phones.map(getPhone)
+        // function getPhone(phone) {
+        //     return phone.model
+        // }
+        // console.log(val3)
+
+        // let val4 = phones.map(phone => phone.price)
+        // console.log(val4)
+
+
+
+        /////////////////////////////////////////////////////////////////////////////////////
+
+
+
+        // const products = [
+        //     {
+        //         name: 'desktop',
+        //         price: 1000,
+        //         count: 8
+        //     },
+        //     {
+        //         name: 'laptop',
+        //         price: 1500,
+        //         count: 5
+        //     },
+        //     {
+        //         name: 'phone',
+        //         price: 500,
+        //         count: 10
+        //     }
+        // ]
+
+        // const total = [];
+        // products.forEach(item => {
+        //     total.push(item.price * item.count);
+        // });
+        // console.log(total);
+
+        // // const total = products.map(item => item.price * item.count);
+        // // console.log(total)
+
+
+        // const total2 = products.map(TotalPrice);
+        // function TotalPrice(item) {
+        //     return item.price * item.count;
+        // }
+        // console.log(total2)
+
+
+        // const total3 = products.map(function (item) {
+        //     return item.price * item.count;
+        // })
+        // console.log(total3)
+
+
+
+        ////////////////////////////////////////////////////////////////////////////////////////////
+
+        // THIS
+
+
+        const goods = {
+            category: 'phone',
+            names: ['SamsungA71', 'Iphone13', 'Xiomi'],
+            call: function () {
+                var self = this
+                this.names.map(function (name) {
+                    console.log(
+                        `${self.category} ${name}`) //self yerine this yazsan isdemiyecey ona gore
+                    // selfi funciondan colde tanimliyib elave etmek lazimdi
+                })
+            }
+        }
+        goods.call();
+
+        const goods2 = {
+            category: 'phone',
+            names: ['SamsungA71', 'Iphone13', 'Xiomi'],
+            call: function () {
+                this.names.map((name) => {
+                    console.log(`${this.category} ${name}`)
+                })
+            }
+        }
+        goods2.call();
+        //1. goods2 obyekti, category və names xüsusiyyətlərinə sahibdir. category daxilində "phone" dəyəri, names daxilində isə bir array mövcuddur.
+        //2. call funksiyası, goods2 obyektinin bir metodudur. Bu metodun əsas məqsədi, names arrayindəki hər bir elementi və category dəyərini konsola yazdırmaqdır.
+        //3. this.names.map((name) => { ... }); ifadəsi ilə names arrayi üzərində bir map əməliyyatı icra olunur. Arrow funksiyası vasitəsilə bir callback funksiyon təyin olunur.
+        //4. Arrow funksiyası daxilindəki console.log(${this.category} ${name}); ifadəsi ilə hər bir elementin əvvəlinə category dəyəri əlavə olunaraq konsola yazdırılır.
+
+        //5. map funksiyası, orijinal arrayi dəyişdirmir və hər bir element üzərində müəyyən əməliyyatı icra edərək yeni bir array yaradır. Bu halda, call funksiyası əsas goods2 obyektini dəyişdirmir, sadəcə konsola yazdırır.
+        // this function icinde isdeyir
+
+        ////////////////////////////////////////////////////////////////////////////////////////////
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Filter</h1>
+    <script>
+
+        // PART 1
+        // const numbers = [1, 3, 6, 8, 10, 12 , 15 , 20 , 23 , 31]
+        // const even = numbers.filter(isEven)
+        // // 2 ye bolunenleri
+        // function isEven (index) {
+        //     return index % 2 === 0  // % 2 !== 0 // index > 10
+        // }
+        // console.log(even)
+
+
+        //PART 2
+
+        // const names = ['Malik' , 'Elvin' , 'Xumar' , 'Shukur' , 'Ilkin' , 'Kenan' , 'Niyazi']
+        // const limit = names.filter(name => name.length <= 5)
+        // console.log(limit)
+      
+
+        //PART 3
+
+        const people = [
+            {
+                name: 'Niyazi',
+                age: 23
+            },
+            {
+                name: 'Malik',
+                age: 25
+            },
+            {
+                name: 'Kenan',
+                age: 12
+            },
+            {
+                name: 'Elvin',
+                age: 15
+            },
+        ]
+
+        // const adults = people.filter(person => person.age >= 18);
+        // console.log(adults)
+        // const adult =  people.filter(person => person.age === 15);
+        // console.log(adult)
+
+        // const findName = people.filter((person => person.name.includes('Kenan'))); // boyu kicik herf qebul etmir
+        // console.log(findName)
+
+        // const getName =  people.filter((person => person.name.toLowerCase().includes('kenan')))
+        // console.log(getName)
+
+        
+        // const search = (keyword , array) =>
+        // array.filter(item => item.toLowerCase().includes(keyword.toLowerCase())) // item = name 
+        //             //name-i  ve daxil olan 'elvin'-i  toLowerCase edirik       // keyword = 'elvin'
+        // console.log(search('elvin',names))                                     // array = names
+        //          // part 2-nin arrayi
+        //         //   daxil olunan keyword ve name tolowecase edilir
+        
+//                 const search = (keyword, array) =>
+//   array.filter(item => item.toLowerCase().includes(keyword.toLowerCase()));
+
+// const names = ["Elvin", "Sara", "John", "Melissa", "Elvira"];
+
+// console.log(search('elvin', names));
+
+
+        const Search = (keyword , array) =>
+        array.filter(item => item.name.toLowerCase().includes(keyword.toLowerCase())) 
+        const result = Search('malik',people)
+        console.log(result) //kicik herif daxil etsekde tapdi                                  
+       
+              
+                             
+
+
+
+    </script>
+</body>
+
+</html>

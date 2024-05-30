@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Includes</h1>
+    <script>
+        // const numbers = [1, 3, 6, 8, 10, 12 , 15 , 19]
+        // const check = numbers.includes(10)
+        // console.log(check)
+
+        
+        // const names = ['Malik' , 'Elvin' , 'Xumar' , 'Shukur' , 'Senan' , 'Kenan' , 'Niyazi']
+        // const checkName = names.includes('Xumar')
+        // console.log(checkName)
+
+
+          
+        const numbers2 = [1, 3, 6, 8, 10, 12 , 15 , 19 , 26]
+        const addNumber = number  => {
+            if (!numbers2.includes(number)) { //gonderdiyimz arrayda yoxdusa push etsin
+                 numbers2.push(number) //unshift
+            }
+        }
+        // addNumber(2)
+        // addNumber(4)
+        addNumber(7)
+        addNumber(26)
+        console.log(numbers2)
+
+
+
+        var array = [1, 2, 3, 4, 5];
+
+var nəticə = array.includes(2);
+console.log(nəticə)
+
+
+
+    </script>
+</body>
+</html>
