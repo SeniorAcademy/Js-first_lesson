@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Reduce</h1>
+    <script>
+        //Reduce information  -----    start
+
+        //         const numbers = [1, 2, 3, 4, 5];
+
+        // const result = numbers.reduce((accumulator, currentValue, currentIndex, array) => {
+        //   console.log(`Step ${currentIndex + 1}:`);
+        //   console.log(`  accumulator: ${accumulator}`);
+        //   console.log(`  currentValue: ${currentValue}`);
+        //   console.log(`  currentIndex: ${currentIndex}`);
+        //   console.log(`  array: [${array}]`);
+
+        //   return accumulator + currentValue;
+        // }, 0);
+
+        // console.log(`Final Result: ${result}`);
+
+        // array.reduce(callback, initialValue)
+
+        // callback -- accumulator, currentValue, currentIndex, array.
+        // const numbers =[2, 5, 8, 15]
+
+
+        // const sum = numbers.reduce((accumulator, currentValue)=>{ 
+        //     return accumulator + currentValue;
+        //     //0 + 2 + 5 + 8 + 15
+        // },0)
+        // console.log(sum)
+
+        //Reduce information  -----    end
+
+        ////////Examples 
+
+
+        // const numbers = [2, 5, 8, 15];
+
+        // let total = 0;
+
+        // for (let index = 0; index < numbers.length; index++) {
+        //     total = total + numbers[index]
+        // }
+        // document.write(total);
+        // console.log(total)
+
+
+        //    // 1
+        // numbers.forEach(number => total = total + number);
+        // console.log(total)
+
+
+        //     //2
+        // let test = numbers.reduce(function (total, number) { // 2 deyer almalidi
+        //     return total + number;
+        // },0);//baslangic deyeri
+        // console.log(test);
+
+        //     const test2 = numbers.reduce(Sum , 0);
+        //     function Sum (total, number) {
+        //         return total + number;
+        //     };
+        //     console.log(test2);
+
+
+        //     let test3 = numbers.reduce((total, number) =>  total + number , 0 ); //burda totala 0 verdiyiz ucun isdeyecek
+        //     console.log(test3);
+
+
+
+        //     // 3
+
+        // const basket = [
+        //     {
+        //         model: "Samsung A71",
+        //         price: 700
+        //     },
+        //     {
+        //         model: "Samsung A51",
+        //         price: 500
+        //     },
+        //     {
+        //         model: "Samsung S20",
+        //         price: 1500
+        //     }
+        // ]
+
+        // let sum = basket.reduce((value, item) => value + item.price, 0); // baslangic deyeri vermek lazimdi burada 0
+        // console.log(sum);
+
+
+        //     let sum2 = 0;
+        //     basket.forEach(item => {
+        //         sum2 += item.price;
+        //     });
+        //     console.log(sum2);
+
+
+        
+
+        // 5
+        //Task
+        const products = [
+            {
+                model: "Samsung A71",
+                brand: "Samsung"
+            },
+            {
+                model: "Samsung A51",
+                brand: "Samsung"
+            },
+            {
+                model: "Samsung S20",
+                brand: "Samsung"
+            },
+            {
+                model: "Iphone 13",
+                brand: "Apple"
+            },
+            {
+                model: "Iphone 14",
+                brand: "Apple"
+            },
+            {
+                model: "Redmi",
+                brand: "Xiomi"
+            },
+            {
+                model: "RedmiNote",
+                brand: "Xiomi"
+            },
+        ]
+
+        // const groupBy = (array, property) => {
+        //     return array.reduce((arr , product) => {
+        //         let key = product[property] // brandi reduce-nin propertysine beraber edirik
+        //         if (!arr[key]) {  // eger daxil etdiyim brand array-in icinde yoxdusa yarat ve at bos arrayin icine 
+        //             arr[key] = []
+        //         }
+        //         else {
+        //             arr[key].push(product) // brand varsa bu defe ise teze arrayin icine push edecek
+        //         }
+        //         return arr
+        //     }, {})
+
+        // }
+        // console.log(groupBy(products, 'brand'));
+
+//         const groupBy = (array, property) => {
+//   return array.reduce((arr, product) => {
+//     let key = product[property];
+//     if (!arr[key]) {
+//       arr[key] = [];
+//     }
+//     arr[key].push(product);
+//     return arr;
+//   }, Object.fromEntries(array.map(product => [product[property], []])));
+// };
+
+// console.log(groupBy(products, 'brand'));
+
+// const groupBy = (array, property) => 
+//   array.reduce((acc, product) => 
+//     ((acc[product[property]] = acc[product[property]] || []).push(product), acc), {});
+
+// console.log(groupBy(products, 'brand'));
+
+// const groupBy = (array, property) => 
+//   array.reduce((acc, product) => {
+//     let key = product[property];
+//     (acc[key] = acc[key] ?? []).push(product);
+//     return acc;
+//   }, {});
+
+
+
+
+
+    
+
+
+        
+    </script>
+</body>
+
+</html>
