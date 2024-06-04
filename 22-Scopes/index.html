@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body style="width: 1200px; height:1200px">
+    <h1 id="header">
+        SCOPES
+    </h1>
+    <!-- <script  src="script.js" type="text/Javascript"></script> -->
+    <!-- <script  src="script2.js" type="text/Javascript"></script> -->
+
+    <script>
+          function localScopeTask() {
+        // Əsas funksiyanın daxilindəki lokal dəyişən
+        var localVar = 25;
+
+        // Əsas funksiyanın sonundakı lokal dəyişəni console-da çap edin
+        console.log("localVar (Lokal Scope):", localVar);
+    }
+
+    // Lokal Scope taskını çağırın
+    localScopeTask();
+
+
+
+    var globalVar = "Bu global dəyişəndir.";
+
+    console.log("globalVar (Global Scope):", globalVar);
+
+    function globalScopeTask() {
+        // Əsas funksiya daxilində "globalVar" dəyişənini console-da çap etməyə cəhd edin (alt funksiya yaratmadan).
+        console.log("globalVar (Global Scope, Əsas funksiya daxilində):", globalVar);
+    }
+
+    // Global Scope taskını çağırın
+    globalScopeTask();
+    </script>
+
+
+
+</body>
+
+</html>
