@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: aliceblue;
+        }
+
+        #main {
+            background-color: lightseagreen;
+            height: 98vh;
+            width: 50vh;
+            color: aliceblue;
+            text-align: center;
+            margin: auto;
+            border-radius: 16px;
+            font-size: 8vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main"></div>
+    <script>
+        var result;
+
+        function changeColor() {
+            var color = ["blue", "red", "yellow", "green", "brown", "lightcoral", "lightskyblue"];
+
+            var random = Math.round(Math.random() * 6); // color.length
+
+            result = color[random];
+        };
+
+
+        // var set = setInterval(function () {
+        //     changeColor();
+        //     var mainDiv = document.getElementById("main");
+
+        //     mainDiv.innerHTML += "JavaScript <br/>";
+
+        //     mainDiv.style.background = result;
+
+        // }, 2000);
+        // clearInterval(set);
+
+
+        // function setColor(){
+        //     changeColor();
+        //     var mainDiv = document.getElementById("main");
+
+        //     mainDiv.innerHTML += "JavaScript..<br/>";
+
+        //     mainDiv.style.background = result;
+        // }
+
+        // var set =  setInterval(setColor , 1500);
+
+
+
+
+
+
+        ////////////////////////////////////////////////////
+
+        var set = setTimeout(function () {
+            // document.write("JavaScript.." + "<br/>")
+            changeColor();
+            var test = document.getElementById("div");
+
+            // document.write("JavaScript.." + "<br/>")
+            test.innerHTML += "JavaScript..<br/>";
+
+            test.style.background = result;
+
+        }, 4000);
+
+        // 4 saniye gozduyub 1 defe isdeyecek
+        ////////////////////////////////////////////////////////////
+    </script>
+</body>
+
+</html>

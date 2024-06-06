@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <!-- setInterval(callback, delay, param1, param2, ...);
+    callback (geri çağırış:) Hər intervalda yerinə yetiriləcək funksiya.
+    delay (gecikmə:) Hər bir geri çağırış funksiyası çağırışı arasında vaxt intervalı (millisaniyələrlə).
+    param1, param2, ...: geri çağırış funksiyasına ötürüləcək əlavə parametrlər. -->
+
+
+    <script>
+        let counter = 0;
+
+        function incrementCounter() {
+            console.log("Counter:", counter);
+            counter++;
+        }
+
+        // Call incrementCounter() every 1000 milliseconds (1 second)
+        const intervalId = setInterval(incrementCounter, 1000);
+
+        // To stop the interval after a certain period (e.g., 5 seconds)
+        setTimeout(() => {
+            clearInterval(intervalId);
+            console.log("Interval stopped after 5 seconds");
+        }, 5000);
+
+        // Qeyd etmək lazım olan vacib məqam odur ki, təmin edilmiş geri çağırış (callback) funksiyasının işləmə müddəti və JavaScript hadisə dövrəsi kimi amillərə görə intervallar tam olaraq müəyyən edilmiş intervallarla işləmir. Bundan əlavə, intervalları diqqətlə istifadə etmək vacibdir, çünki səhv istifadə edildikdə performans problemlərinə səbəb ola bilər. sayğac
+    </script>
+
+</body>
+
+</html>

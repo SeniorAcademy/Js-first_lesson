@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>Timeout</h1>
+  <h2 id="clock">00 : 00</h2>
+
+  <button id="play">Play</button>
+  <button id="stop">Stop</button>
+  <script>
+    // function corekal() {
+    //   console.log("Eve gelende corek al!");
+    // }
+
+    // function kartofal() {
+    //   console.log("Eve gelende kartof al!");
+    // }
+
+    // const a = setTimeout(corekal, 2000);
+    // const b = setTimeout(kartofal, 4000); // setInterval
+    // const c = setTimeout(corekal, 6000);
+
+    // // clearTimeout(b);
+
+    // console.log("a", a);
+    // console.log("b", b);
+    // console.log("c", c);
+
+    //     let counter = 0;
+
+    // const a = setTimeout(() => corekal(counter), 2000);
+    // const b = setTimeout(() => kartofal(counter + 1), 4000);
+    // const c = setTimeout(() => corekal(counter + 2), 6000);
+
+    // console.log("a", a);
+    // console.log("b", b);
+    // console.log("c", c);
+
+
+    // let time;
+    // let seconds = 0;
+    // let pause = false;
+
+
+    // function clock() {
+    //   seconds += 1;
+    //   const min = Math.floor(seconds / 60);
+    //   const qaliqsaniye = seconds - min * 60;
+    //   const result = `${min < 10 ? "0" + min : min} 
+    //         : ${qaliqsaniye < 10 ? "0" + qaliqsaniye : qaliqsaniye
+    //     }`;
+    //   document.querySelector("#clock").innerHTML = result;
+    //   console.log(result);
+    // }
+
+    // document.querySelector("#play").addEventListener("click", function (e) {
+    //   pause = pause ? false : true;
+
+    //   if (pause) {
+    //     clearInterval(time);
+    //     e.target.innerHTML = "Play";
+    //     time = setInterval(clock, 1000);
+    //   } else {
+    //     e.target.innerHTML = "Pause";
+    //     clearInterval(time);
+    //   }
+    // });
+
+    // document.querySelector("#stop").addEventListener("click", function () {
+    //   clearInterval(time);
+
+    // });
+        let time;
+        let seconds = 0;
+        let pause = false;
+
+        function clock() {
+            seconds += 1;
+            const min = Math.floor(seconds / 60);
+            const remainingSeconds = seconds % 60;
+            const result = `${min < 10 ? "0" + min : min} 
+                : ${remainingSeconds < 10 ? "0" + remainingSeconds : remainingSeconds}`;
+            document.querySelector("#clock").innerHTML = result;
+            console.log(result);
+        }
+
+        document.querySelector("#play").addEventListener("click", function (e) {
+            pause = !pause;
+
+            if (pause) {
+                clearInterval(time);
+                e.target.innerHTML = "Play";
+                time = setInterval(clock, 1000);
+            } else {
+                e.target.innerHTML = "Pause";
+                clearInterval(time);
+            }
+        });
+
+        document.querySelector("#stop").addEventListener("click", function () {
+            clearInterval(time);
+            seconds = 0;
+            document.querySelector("#clock").innerHTML = "00 : 00";
+        });
+
+
+    // let counter = 0;
+
+    // function incrementCounter() {
+    //   console.log("Counter:", counter);
+    //   counter++;
+    // }
+
+    // // Call incrementCounter() every 1000 milliseconds (1 second)
+    // const intervalId = setInterval(incrementCounter, 1000);
+
+    // // To stop the interval after a certain period (e.g., 5 seconds)
+    // setTimeout(() => {
+    //   clearInterval(intervalId);
+    //   console.log("Interval stopped after 5 seconds");
+    // }, 5000);
+  </script>
+</body>
+
+</html>
