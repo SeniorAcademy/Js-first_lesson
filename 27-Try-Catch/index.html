@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <title>Document</title>
+
+</head>
+
+<body>
+
+
+    <!-- PART1 -->
+    <h1 class="message"></h1>
+
+    <!-- PART2 -->
+    <button class="btn btn-warning text-white mx-5" onClick="myError()">CLICK</button>
+    <input type="text" class="data">
+
+    <script>
+        // <!-- PART1 -->
+        // var message = document.querySelector(".message"); 
+        // // ALERTI sehv yaz
+        // // TRY CATCHIN icinde sehv yazdigimiz kodlari gosterir
+
+        // try {
+        //     alert("Hello EveryBody");
+        // }
+        // catch (error) {
+        //     message.innerHTML = error.message;
+        //     //name
+        // }
+
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        // <!-- PART2 -->
+        function myError() {
+
+            var messages, inputValue;
+
+            inputValue = document.querySelector(".data").value; // inputun value-sin goturecek
+            messages = document.querySelector(".message");
+            messages.innerHTML = ""; // gelen melumatlari deyise bilmek ucun icin bos saxlamaq lazimdi
+
+            try {
+                if (inputValue == "") throw "Inputu bos buraxmaq olmaz";
+                if (isNaN(inputValue)) throw "Ancaq reqem daxil ede bilersiniz";
+                inputValue = Number(inputValue); //input-dan gelen value STRING oldugu ucun NUMBERE cevirik
+
+                if (inputValue < 10) {
+                    throw "Daxil edilen reqem 10-dan kicik ola bilmez";
+                }
+
+                else if (inputValue > 100) {
+                    throw "Daxil edilen reqem 100-den boyuk ola bilmez";
+                }
+                else if (inputValue > 10 && inputValue < 100){
+                    throw `${inputValue} reqemini secdiniz`; //burdada throw yaz catch-i yoxla yani sehv yaz
+                }
+            }
+
+            catch (error) {
+                messages.innerHTML = error;
+            }
+            // Finally-ni en sonda elave et ve yoxla
+            // Inputun icine her hansi bir  value daxil edenden sonrada onu temizleyecek
+            finally{
+                document.querySelector(".data").value = "";
+            }
+        }
+
+  /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    
+
+//   throw ifadesi, bir JavaScript istifadəçisinin öz istifadəsi ilə yaratdığı xətalara görə tətbiqin icrasını dayandırmaq və hata mesajını göstərmək üçün istifadə olunur. Məsələn, bir kod bloku daxilində daxili əməliyyatlar və ya şərt operatorları vasitəsilə istifadəçinin təyin etdiyi bir şərti yoxlayan bir ifadəyə nəzarət etmək üçün istifadə oluna bilər.
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

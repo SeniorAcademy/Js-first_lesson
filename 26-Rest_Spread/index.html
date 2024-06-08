@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p>Paragraph-1</p>
+    <p>Paragraph-2</p>
+    <p>Paragraph-3</p>
+
+
+
+
+    <script>
+        // Rest Operator (Qalığı): Rest operatoru ... işarəsi ilə ifadə olunur və funksiya parametrlərində və ya array və object destructuring-də istifadə edilir. Bu operator, bir funksiya parametr listində ya da array/object destructuring zamanı qalıq dəyərləri toplamaq üçün istifadə olunur. Rest operatoru ilə, daxil edilən əlavə dəyərlər bir array kimi saxlanılır
+        // function sum(...args) {
+        //     return args.reduce((total, current) => total + current, 0);
+        // }
+
+        // console.log(sum(1, 2, 3, 4)); Bu funksiya, əlavə olunan bütün dəyərləri toplayır. Rest operatoru ...args, funksiya tərəfindən qalan bütün dəyərləri bir array kimi qəbul edir.
+
+        // Spread Operator (Yayma operatoru): Spread operatoru də ... işarəsi ilə ifadə olunur və bir array, object və ya funksiya parametr dəyəri kimi istifadə olunur. Bu operator, array və ya objectin elementlərini bir-birindən ayrılmış dəyərlər kimi daxil etmək üçün istifadə olunur.
+        // const arr1 = [1, 2, 3];
+        // const arr2 = [4, 5, 6];
+
+        // const combinedArray = [...arr1, ...arr2];
+        // console.log(combinedArray); // Çıxış: [1, 2, 3, 4, 5, 6] Burada ...arr1 və ...arr2 dəyərləri ayrı ayrı elementləri yayır və combinedArray array-inə daxil edir. Bu nümunədə, combinedArray array-i arr1 və arr2 array-lərinin bütün elementlərini içərisində saxlayır.
+
+        
+// Rest operatoru (...) və spread operatoru (...) JavaScript-də iki əsas məqsədə xidmət edir: dəyişənlərin yığılıb-dağıdılması və parametrlərin toplanması və dağıdılması. Hər ikisi də dəyişənlərin toplanması və dağıdılması üçün istifadə olunur, lakin fərqli məqsədlərlə.
+
+
+
+
+        // Part1
+
+        let user = {
+            name: "Messi",
+            surName: "Leo",
+            age: 35,
+            city: "Paris"
+        };
+
+        user.city = "Barcelona";
+        // user["city"] = "Barcelona";
+        console.log(user);
+
+        // 1ci examplda user.city kimi elave etsekde eslinde js-in arxa planinda asagida yazilan kimi gorsenecek
+
+        let user2 = {
+            name: "Messi",
+            surName: "Leo",
+            age: 35,
+            city: "Paris",
+            city: "Barcelona"
+        };
+        // console.log(user2);
+        // 2cide 2dene city yazsaqda 2-ci city deyerini gosterecekdir
+        // Yani 2ci yazilan 1cinin esil versiyasidir
+        // Eslinde elave edende icine kopyaliyiriq ona gorede 3cu exampldaki duz yoldur
+
+
+        let user3 = {
+            name: "Messi",
+            surName: "Leo",
+            age: 35,
+            city: "Paris"
+        };
+
+        user3 = {
+            ...user3,
+            city: "Barcelona"
+        };
+        console.log(user3);
+
+        // Part2
+        // Spread
+        ////////////////////////////////////////////////////////////////////////////////////
+        const name = ['Niyazi', 'Malik', 'Elvin', 'Kenan'];
+
+        function getName(name1, name2, name3, name4) {
+            console.log(name1);
+            console.log(name2);
+            console.log(name3);
+            console.log(name4);
+        }
+
+        getName(name[0], name[1], name[2]); //3 eded cagir
+        // burda 4cu adi daxil edsek metodada elave etmek lazimdi
+        // ARRAYE FUNCTIONA VE CONSOLA 4CU ADI DAXIL ET AMMA FUNCTIONU CAGIRANDA ELEME FERQ GORUNECEK
+
+        getName(...name);
+
+        // Part3
+        // Rest
+        const ad = ['Niyazi', 'Malik', 'Elvin', 'Kenan', 'Xumar'];
+
+        function getAd(ad1, ad2, ...digerAdlar) {
+            // cagirdigimizi consola vercek  digerAdlar verdiyimizi array formasinda daxil edecek
+            console.log(ad1);
+            console.log(ad2);
+            console.log(digerAdlar);
+        }
+        getAd(...ad);
+
+        ////////////////////////////////////////////////////////////////////////////////////
+        // Part4
+
+        let numbers = [2, 3, 4, 5, 6];
+        //  console.log([...numbers]);
+        //  console.log([1, ...numbers, 7]);
+
+
+
+        ////////////////////////////////////////////////////////////////////////////////////
+        // Part5
+
+        let paragraphs = document.querySelectorAll('p');
+        // paragraphs.map(paragraph => console.log(paragraph));//error verecek cunki paragraphs array deyil
+        [...paragraphs].map(paragraph => console.log(paragraph));
+        //  elementi arraye cevirdi
+    </script>
+</body>
+
+</html>
