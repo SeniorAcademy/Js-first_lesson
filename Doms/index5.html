@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <title>Document</title>
+    <style>
+        #div {
+            width: 100%;
+            height: 20vh;
+            line-height: 20vh;
+            background-color: rgb(126, 226, 126);
+            margin-bottom: 100px;
+            color: aliceblue;
+            font-size: 100px;
+            text-align: center;
+        }
+
+        .hidden-content {
+            display: none;
+        }
+
+        .show-content {
+            display: block;
+        }
+
+        p {
+            background-color: rgb(111, 255, 211);
+            color: rgb(0, 40, 70);
+            padding: 30px;
+            text-align: center;
+            font-size: 30px;
+        }
+
+        #Text {
+            padding: 4px;
+            border-radius: 4px;
+            margin: 0px 10px;
+        }
+
+      .all{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }  
+    </style>
+</head>
+
+<body>
+    <div id="div"></div>
+    <button class="btn btn-warning">Click</button>
+
+
+    <p class="hidden-content">I am a Content and I can Show and Hide </p>
+
+
+    <!-- // PART 4 -->
+    <div class="all">
+        <button onclick="Decrease()" id="Decrease" class="btn btn-danger">-</button>
+        <input id="Text" value="0">
+        <button onclick="Increase()" id="Increase" class="btn btn-success">+</button>
+    </div>
+
+    <script>
+        // PART 1
+        document.getElementsByClassName('btn')[0].addEventListener("click", function () {
+            var value = document.getElementById('div');
+            value.innerHTML = "Hello World";
+            value.style.backgroundColor = "red";
+        });
+
+
+
+
+        // PART 2
+        var btn = document.getElementsByClassName('btn')[0];
+        var name = prompt('Your Name :', 'null');
+        btn.addEventListener("click", Hello);
+
+        // btn.removeEventListener("click" ,Hello);
+
+        function Hello() {
+            var hi = document.getElementById("div");
+            hi.innerHTML = "Hello" + "........." + name;
+            hi.style.backgroundColor = "blue";
+        }
+//////////////////////////////////////////////////////////////////////////
+
+        // PART 3
+        var btn = document.getElementsByClassName('btn')[0];
+
+        var hiddenContent = document.querySelector(".hidden-content");
+
+        function revealContent() {
+
+            if (hiddenContent.classList.contains("show-content")) {
+
+                hiddenContent.classList.remove("show-content"); //varsa remove olsun
+            }
+            else {
+                hiddenContent.classList.add("show-content"); // yoxdusa add olsun
+            }
+        }
+        btn.addEventListener('click', revealContent);
+
+
+
+        // // PART 4
+
+        function Increase() {
+            var increase = document.getElementById("Text").value;  // value ile inputa verilen deyeri goturusen
+            increase = Number(increase); // inputdan gelen value STRING oldugu ucun NUMBER metodundan istifade edirik
+            if (increase < 10) {
+                increase = increase + 1;
+                // increase += 1;
+            }
+            document.getElementById("Text").value = increase;
+        };
+
+        function Decrease() {
+            var decrease = document.getElementById("Text").value;
+            decrease = Number(decrease);
+            if (decrease > 0) {
+                decrease = decrease - 1;
+            }
+            document.getElementById("Text").value = decrease;
+        };
+
+    </script>
+</body>
+
+</html>

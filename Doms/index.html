@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #div {
+            height: 25vh;
+            width: 100%;
+            background-color: lightcoral;
+            text-align: center;
+            line-height: 25vh;
+            font-size: 10vh;
+            color: beige;
+        }
+
+        #div2 {
+            height: 25vh;
+            width: 100%;
+            background-color: lightseagreen;
+            text-align: center;
+            line-height: 25vh;
+            font-size: 10vh;
+            color: beige;
+        }
+
+        #div3 {
+            height: 25vh;
+            width: 100%;
+            background-color: lightslategray;
+            text-align: center;
+            line-height: 25vh;
+            font-size: 10vh;
+            color: beige;
+        }
+
+        #div4 {
+            height: 25vh;
+            width: 100%;
+            background-color: lightskyblue;
+            text-align: center;
+            line-height: 25vh;
+            font-size: 10vh;
+            color: beige;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="mainDiv">
+        <div id="div" class="class"></div>
+        <div id="div2" class="class"></div>
+        <div id="div3" class="class"></div>
+        <div id="div4" class="class" name="names"></div>
+    </div>
+
+    <!-- // Classlari goturende eyni adli Classlari array mentiqinde oldugu kimi secmek lazimdi 
+    // yani Classin adi eynidirse arrayin index nomresi deyisecek hamisi ayridirsa ele [0] ile secilecek -->
+    <script>
+         document.getElementById("div").innerHTML = "Senior.Az.Id";
+
+         document.getElementsByClassName("class")[0].innerHTML = "Senior.Az.Class";
+ 
+
+        document.getElementsByTagName("div")[1].innerHTML = "Senior.Az";
+        document.getElementsByName("names")[0].innerHTML = "Senior.Az";
+
+
+        
+        document.querySelector("#div").innerHTML = "Senior.Az";
+        document.querySelector(".class").innerHTML = "Senior.Az";
+        document.querySelectorAll(".class")[1].innerHTML = "Senior.Az";
+        document.querySelectorAll("#div2")[0].innerHTML = "Senior.Az";
+
+
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        // var test =  document.getElementsByClassName('class');
+        var test =  document.querySelectorAll('.class');
+        for (let index = 0; index < test.length; index++) {
+            test[index].innerHTML = "Senior.Az";
+            test[index].style.color = "brown";
+        }
+
+
+         document.getElementById("div").id = "div2";  // divi div2-ye beraber eledi
+
+
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+   var main = document.getElementById("mainDiv");
+     main.childNodes[1].innerHTML = "Hello";
+     main.firstElementChild.innerHTML = "Hello";
+     main.lastElementChild.innerHTML = "Hello";
+     main.children[0].innerHTML = "Hello";
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    var val = document.getElementById("div3");
+    val.innerHTML = 'Hello'
+    val.previousElementSibling.innerHTML  = "Hello";
+    val.nextElementSibling.innerHTML  = "Hello";
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+    </script>
+
+
+</body>
+
+</html>

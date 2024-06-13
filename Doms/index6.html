@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #div {
+            width: 100%;
+            height: auto;
+            background-color: rgb(140, 0, 220);
+            padding: 20px;
+            color: aliceblue;
+            text-align: center;
+            font-size: 50px;
+            line-height: 100px;
+        }
+
+        #div2 {
+            width: 100%;
+            height: auto;
+            background-color: rgb(220, 0, 140);
+            padding: 20px;
+            color: aliceblue;
+            text-align: center;
+            font-size: 50px;
+            line-height: 100px;
+        }
+
+        .name_of_class {
+            border-radius: 300px;
+            margin: auto;
+            margin-top: 100px;
+            color: lightpink;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div">
+        <p id="p1" class="p1">1-ci Paragraph</p>
+        <p id="p2">2-ci Paragraph</p>
+        <p id="p3">3-cu Paragraph</p>
+        <p id="p4">4-cu Paragraph</p>
+    </div>
+    <img src="https://images.unsplash.com/photo-1683009427037-c5afc2b8134d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHx8"
+        style="height: 200px" id="headerImg">
+
+    <script>
+        const imgEl = document.querySelector("#headerImg");
+
+
+
+        var paragraph = document.createElement("p");//element yaradiriq
+
+        var text = document.createTextNode("5-ci Paragraph");//text-in veririk
+
+        paragraph.appendChild(text);//texti p elementine add edirik
+
+        var mainDiv = document.getElementById("div");
+
+        //mainDiv.appendChild(paragraph);//Sona Elave Edir
+
+
+        // mainDiv.insertBefore(paragraph, document.getElementById("p1")); // Evvele Elave Edir
+        // mainDiv.insertBefore(paragraph, document.getElementsByClassName("p1")[0]); // Evvele Elave Edir
+
+
+        // mainDiv.removeChild(document.getElementById("p2"));
+
+        // mainDiv.replaceChild(text , document.getElementById("p3"));//p3 text-ile evez edecek
+
+        //  mainDiv.setAttribute("id" , "div2"); // id-ni deyismek
+        // //////////////////////////////////////////////////////////////////////////
+
+
+        var test = document.createAttribute("class");//class yaradiriq
+
+        test.value = "name_of_class";// class adin veririk
+
+        mainDiv.setAttributeNode(test);//esas dive set edirik
+
+        // document.getElementById("p1").setAttributeNode(test);//ve ya p1 id-li elemente set edirik
+
+
+
+        //////////////////////////////////////////////////////////////////////////
+        // alert(document.body.innerHTML); //head
+        //////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+        //  document.getElementsByClassName("p1")[0].innerHTML = "Monsters"; 
+        //  document.getElementById("p1").innerHTML = "Monsters"; 
+        //  document.getElementsByTagName("p")[0].innerHTML = "Monsters"; 
+        //  document.getElementsByTagName("p")[0].style.color = "red"; 
+
+
+
+        var all = document.getElementsByTagName("p");
+        for (index = 0; index < all.length; index++) {
+            all[index].style.color = "red";
+            all[index].innerHTML = "Monsters";
+        }
+
+        var all = document.querySelectorAll("p");
+        all.forEach(function (paragraph) {
+            paragraph.style.color = "red";
+            paragraph.innerHTML = "Monsters";
+        });
+
+
+        // Array.from Arraye benzeyen elementleri tam array-e cevirir  
+        var all = Array.from(document.querySelectorAll("p"));
+        all.map(function (paragraph) {
+            paragraph.style.color = "red";
+            paragraph.innerHTML = "Monsters";
+        });
+
+
+
+        const imgSrc = imgEl.getAttribute("src");
+        // const imgSrc = imgEl.src;
+
+        imgEl.setAttribute(
+            "src",
+            "https://images.pexels.com/photos/56866/garden-rose-red-pink-56866.jpeg?cs=srgb&dl=pexels-pixabay-56866.jpg&fm=jpg"
+        );
+
+    </script>
+
+</body>
+
+</html>

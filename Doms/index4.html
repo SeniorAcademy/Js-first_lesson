@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #div {
+            width: 100%;
+            height: 20vh;
+            line-height: 20vh;
+            background-color: lightsalmon;
+            border-radius: 5px;
+            margin-bottom: 100px;
+            color: aliceblue;
+            font-size: 100px;
+            text-align: center;
+        }
+
+        #btn {
+            padding: 30px;
+            border-radius: 10px;
+            background-color: lightgreen;
+            border: 3px solid lightsalmon;
+            color: lightsalmon;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- PART1 -->
+
+    <div id="div"></div>
+    <button onclick="alert('You just have clicked this button')" id="btn">Click Here</button>
+    <button onclick="document.getElementById('div').innerHTML ='You just have clicked this button'" id="btn">Click Here</button>
+
+    <button onclick="clickAction()" id="btn">Click Here</button>
+    <!-- ondblclick -->
+
+
+
+
+    <!-- PART2 -->
+    <input onchange="clickAction()" type="text">
+    <!-- 1 -onchange == inputdan yazi yazib cixib ekrana tiklayanda isleyecek -->
+
+
+
+    <input onfocus="clickAction()" onblur="outAction()" type="text">
+
+
+    
+
+    <input onkeypress="clickAction()" type="text">
+    <!-- onkeyup duymeni basib buraxandan sonra aktiv olur
+          onkeydown duymeni basan kimi aktiv olur -->
+
+
+
+
+    <!-- // PART3 -->
+
+    <input onmouseenter="mouseAction1()" onmouseleave="mouseAction2()" id="text">
+      <!-- onmouseover                   onmouseout--> 
+      <!-- onmousemove                   onmousedown ustune tiklayanda deyisir yene qayidir -->
+
+
+      
+    <script>
+
+
+        //    <!-- PART1 -->
+        function clickAction() {
+            // alert('You just have clicked this button');
+            document.getElementById('div').innerHTML = 'Tema Deyisdi';
+            document.getElementById('div').style.backgroundColor = 'green';
+
+        }
+
+
+        // <!-- PART2 -->
+        function outAction() {
+            document.getElementById('div').innerHTML = 'Inputdan cixdiq';
+        }
+
+
+        //    <!-- PART3 -->
+        function mouseAction1() {
+            var value = document.getElementById('text');
+            value.style.width = '300px';
+            value.style.height = '300px';
+            value.style.borderRadius = '30px';
+            value.style.backgroundColor = 'red';
+        }
+
+        function mouseAction2() {
+            var value = document.getElementById('text');
+            value.style.width = '100px';
+            value.style.height = '100px';
+            value.style.borderRadius = '3px';
+            value.style.backgroundColor = 'white';
+        }
+
+    </script>
+</body>
+
+</html>

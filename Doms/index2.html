@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #div {
+            height: 25vh;
+            width: 100%;
+            background-color: lightcoral;
+        }
+
+        #div2 {
+            height: 25vh;
+            width: 100%;
+            background-color: lightseagreen;
+        }
+
+        #div3 {
+            height: 25vh;
+            width: 100%;
+            background-color: lightslategray;
+        }
+
+        #div4 {
+            height: 25vh;
+            width: 100%;
+            background-color: lightskyblue;
+        }
+
+        h1 {
+            color: brown;
+            text-align: center;
+            line-height: 25vh;
+            font-size: 5vh;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <div id="div" class="class"><h1>JavaScript</h1></div>
+    <div id="div2" class="class"></div>
+    <div id="div3" class="class"></div>
+    <div id="div4" class="class" name="names"></div>
+
+
+    <script>
+
+        var firstDiv = document.getElementById("div").innerHTML;
+
+        //document.getElementById("div2").innerHTML = firstDiv;
+
+        document.getElementById("div2").innerHTML = "<h1> Senior.Az </h1>";
+
+        document.getElementById("div3").innerText =  "<h1> Senior.Az </h1>";
+
+       //  document.getElementById("div4").remove();
+
+
+ 
+
+
+
+    </script>
+</body>
+
+</html>
