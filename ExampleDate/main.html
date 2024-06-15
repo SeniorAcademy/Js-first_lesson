@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clock</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #000;
+    }
+
+    #Clock {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+
+    #Hour {
+      width: 300px;
+      height: 300px;
+      line-height: 300px;
+      background-color: #ccc;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 200px;
+      color: #000;
+    }
+
+    #Minute {
+      width: 300px;
+      height: 300px;
+      line-height: 300px;
+      background-color: #ccc;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 200px;
+      color: #000;
+    }
+
+    #Second {
+      width: 300px;
+      height: 300px;
+      line-height: 300px;
+      background-color: #ccc;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 200px;
+      color: #000;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div id="Clock">
+    <div class="test" id="Hour"></div>
+    <div class="test" id="Minute"></div>
+    <div class="test" id="Second"></div>
+  </div>
+
+  <script>
+
+    var hours = prompt("Saat", 0);
+    var minutes = prompt("Dəqiqə", 0);
+    var seconds = prompt("Saniyə", 10);
+
+    var interval = setInterval(function () {
+      document.getElementById("Hour").innerHTML = hours;
+      document.getElementById("Minute").innerHTML = minutes;
+      document.getElementById("Second").innerHTML = seconds--;
+
+      if (Number(document.getElementById("Second").innerHTML) == 0) {
+        minutes--;
+        seconds = 59;
+      }
+
+      if (Number(document.getElementById("Minute").innerHTML) == 0 &&
+        Number(document.getElementById("Second").innerHTML) == 0) {
+        hours--;
+        minutes = 59;
+      }
+      if (Number(document.getElementById("Hour").innerHTML) == 0 &&
+        Number(document.getElementById("Minute").innerHTML) == 0 &&
+        Number(document.getElementById("Second").innerHTML) == 0) {
+
+        for (i = 0; i <= 2; i++) {
+          let finish = document.getElementsByClassName("test");
+          finish[i].style.backgroundColor = "red";
+          finish[i].style.color = "#ccc";
+        }
+        
+        clearInterval(interval);
+      }
+    }, 1000);
+
+
+
+  </script>
+</body>
+
+</html>
