@@ -1,0 +1,91 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main-parent
+{
+    width: 100%;
+    height: 100vh;
+    background-image: url(https://images.unsplash.com/photo-1603791452906-af1740e171bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8cmVnaXN0ZXIlMjBlbWFpbHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main-parent .form-wrap
+{
+    width: 700px;
+    background: rgba(70, 70, 70, 0.70);
+    border-radius: 70px;
+    padding: 70px;
+    backdrop-filter: blur(7px);
+    color: #fff;
+
+}
+.form-wrap form h1
+{
+    font-variant: small-caps;
+    font-size: 50px;
+    text-align: center;
+    margin-bottom:20px;
+    color: #fff;
+
+}
+
+::placeholder { 
+    color: #fff;
+    opacity: 0.5;
+  }
+
+
+.form-wrap form .single-input input
+{
+    width: 100%;
+    padding: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    outline: none;
+    background: transparent;
+    margin-bottom: 20px;
+    font-size: 25px;
+    border-radius: 20px;
+    color: #fff;
+
+}
+.form-wrap form .submit-button
+{
+    text-align: center;
+}
+.form-wrap form .submit-button button.button
+{
+    padding: 15px 45px;
+    background-color: #000;
+    margin: 20px;
+    outline: none;
+    color: rgb(180, 255, 80);
+    font-size: 25px;
+    border-radius: 15px;
+    border: 2px solid rgb(180, 255, 80);
+    cursor: pointer;
+}
+.form-wrap form .account-have
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 25px;
+    margin-top: 10px;
+    color: #fff;
+
+}
+.form-wrap form .account-have a
+{
+    text-decoration: none;
+    color: #fff;
+    font-size: 25px;
+}
+
