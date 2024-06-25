@@ -1,0 +1,43 @@
+body {
+    font-family: cursive;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #22373f;
+    box-sizing: border-box;
+}
+
+.list-container{
+    display: flex;
+}
+
+li {
+    list-style: none;
+}
+
+.card-container {
+    margin: 225px  10px;
+    background-color: #155044;
+    border-radius: 10px;
+    box-shadow: 5px 15px 25px -15px rgba(0,0,0,0.90);
+    color: #b4b8ce;
+    text-align: center;
+    min-width: 200px;
+    padding: 20px;
+    border: 5px solid #4fffdf;
+}
+
+.imgs {
+    border: 5px solid #4fffdf;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+
+}
+.name-container {
+    margin :20px 0;
+}
+
+
+  
